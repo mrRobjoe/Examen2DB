@@ -30,29 +30,37 @@ namespace Examen2JoharieEnriquez
             ClsCliente.SetTelefono(tTelefono.Text);
         }
 
-        protected void tDireccion_TextChanged(object sender, EventArgs e)
+        protected void tDireccion_TextChanged(object sender, EventArgs e) 
         {
             ClsCliente.SetDireccion(tDireccion.Text);
         }
 
-        protected void bElectricidad_Click(object sender, EventArgs e)
+        protected void bElectricidadd_Click(object sender, ImageClickEventArgs e)
         {
+            int elect = 1;
+            ClsCliente.SetServicio(elect);
+            Response.Redirect("ManejoDatos.aspx");       
+        }
+
+        protected void bAguaa_Click(object sender, ImageClickEventArgs e)
+        {
+            int elect = 2;
+            ClsCliente.SetServicio(elect);
             Response.Redirect("ManejoDatos.aspx");
         }
 
-        protected void bAgua_Click(object sender, EventArgs e)
+        protected void bCablee_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("ManejoDatos.aspx");
+            int elect = 3;
+            ClsCliente.SetServicio(elect);
+            Response.Redirect("ManejoDatos.aspx");          
         }
 
-        protected void bCable_Click(object sender, EventArgs e)
+        protected void bTelefonno_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("ManejoDatos.aspx");
-        }
-
-        protected void bTelefono_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ManejoDatos.aspx");
+            int elect = 4;
+            ClsCliente.SetServicio(elect);
+            Response.Redirect("ManejoDatos.aspx");       
         }
     }
 }

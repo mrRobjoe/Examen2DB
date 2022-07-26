@@ -21,6 +21,10 @@ namespace Examen2JoharieEnriquez
         private static float iva { get; set; }
         private static float total { get; set; }
 
+        private static int codFactura = 0;
+        private static int codServicio;
+        private static string tipServ;
+
         public ClsCliente(string nom, string ced, string direc, string telef, float montoPag, float desc, float subTo, float IVA, float tot)
         {
             nombre = nom;
@@ -33,7 +37,12 @@ namespace Examen2JoharieEnriquez
             iva= IVA;
             total= tot;
         }
-        
+
+       /* internal static void SetMontoPagar(string text)
+        {
+            throw new NotImplementedException();
+        }*/
+
         public static string GetNombre() { return nombre; }
         public static string GetCedula() { return cedula; }
         public static string GetDireccion() { return direccion; }
@@ -43,6 +52,11 @@ namespace Examen2JoharieEnriquez
         public static float GetSubTotal() { return subTotal; }
         public static float GetIVA() { return iva; }
         public static float GetTotal() { return total; }
+
+        public static int GetFactura() { return codFactura; }
+        public static int GetServicio() { return codServicio; }
+        public static string GetTipoServ() { return tipServ; }
+        
 
         public static void SetCedula(string ced)
         {
@@ -81,21 +95,30 @@ namespace Examen2JoharieEnriquez
             total = tott;
         }
 
+
+        public static void SetFactura(int codFact)
+        {
+            codFactura = codFact;
+        }
+        public static void SetServicio(int codServ)
+        {
+            codServicio = codServ;
+        }
+        public static void SetTipoServ(string tServ)
+        {
+            tipServ = tServ;
+        }
+
+        //
         public static Boolean Salvar()
         {
             Boolean existe = false;
-            /*string s = System.Configuration.ConfigurationManager.ConnectionStrings["UHUNIVERSIDADConnectionString"].ConnectionString;
-            SqlConnection conexion = new SqlConnection(s);*/
-            String strConnString = ConfigurationManager.ConnectionStrings["Examen2DBConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(strConnString);
+            //string strConnString = ConfigurationManager.ConnectionStrings["Examen2DBConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Examen2DBConnectionString"].ConnectionString);
             try
             {
-                /*conexion.Open();
-                SqlCommand comando = new SqlCommand("insert into usuario (Nombre, Clave, Edad) " + "values ('" + nombre + "','" + clave + "','"+edad+"')", conexion);//completar
-                comando.ExecuteNonQuery();*/
                 con.Open();
                 SqlCommand command = new SqlCommand("sp_Salvar", con);
-                //command.Parameters.Add(new SqlParameter("@codigo", "tCodigo.Text"));
                 command.Parameters.Add(new SqlParameter("@nombre", nombre));
                 command.Parameters.Add(new SqlParameter("@cedula", cedula));
                 command.Parameters.Add(new SqlParameter("@telefono", telefono));
@@ -120,6 +143,36 @@ namespace Examen2JoharieEnriquez
             return existe;
         }
 
+        public static void Calculo()
+        {
+            SetSubTotal(montoPagar - descuento);
+            SetIVA((float)(GetSubTotal() * 0.13));
+            SetTotal(GetSubTotal() + GetIVA());
+        }
 
+        public static void Incremento()
+        {
+            codFactura += 1;
+        }
+
+        public static void codSer()
+        {
+            if (codServicio == 1)
+            {
+                tipServ = "Electricidad";
+            }
+            else if (codServicio == 2)
+            {
+                tipServ = "Agua";
+            }
+            else if (codServicio==3)
+            {
+                tipServ = "Cable";
+            }
+            else if (codServicio==4)
+            {
+                tipServ = "Teléfono";
+            }
+        }
     }
 }

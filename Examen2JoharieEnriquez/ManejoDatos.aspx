@@ -1,16 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuPrincipal.Master" AutoEventWireup="true" CodeBehind="ManejoDatos.aspx.cs" Inherits="Examen2JoharieEnriquez.WebForm2" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="css/estilos.css" rel="stylesheet" />
     <section>
         <p>
         Facturación<br />
+        </p>
+        <p>
         Cod Factura:
         <asp:Label ID="lCodFactura" runat="server" Text="Label"></asp:Label><br />
         Codigo Servicio: <asp:Label ID="lCodigoServ" runat="server" Text=""></asp:Label><br />
-        Mes: 
-
-
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        </p> 
+        <p>
+         Mes:
+        <asp:DropDownList ID="DropDownList1" runat="server" Height="27px">
             <asp:ListItem>Enero</asp:ListItem>
             <asp:ListItem>Febrero</asp:ListItem>
             <asp:ListItem>Marzo</asp:ListItem>
@@ -24,19 +27,24 @@
             <asp:ListItem>Noviembre</asp:ListItem>
             <asp:ListItem>Diciembre</asp:ListItem>
         </asp:DropDownList><br />
-        Monto: <asp:TextBox ID="tMonto" runat="server" OnTextChanged="tMonto_TextChanged"></asp:TextBox>              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              Descuento: <asp:TextBox ID="tDescuento" runat="server"></asp:TextBox><br />
+        </p>
+        <p>
+        Monto: <asp:TextBox ID="tMonto" runat="server" OnTextChanged="tMonto_TextChanged"></asp:TextBox>              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              Descuento: <asp:TextBox ID="tDescuento" runat="server" OnTextChanged="tDescuento_TextChanged"></asp:TextBox><br />
+        </p>
+        <div>
         <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="bAgregar_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="bSalvar" runat="server" Text="Salvar" OnClick="bSalvar_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="bVolver" runat="server" Text="Volver" />
-
-    </p>
+        <asp:Button ID="bVolver" runat="server" Text="Volver" OnClick="bVolver_Click" />    
+        </div>
     </section>
 
     <section>
         <p>
         Cliente<br />
+        </p>
+        <p>
             Nombre:
             <asp:Label ID="lNombre" runat="server"></asp:Label><br />
             Cedula:
@@ -52,6 +60,8 @@
     <section>
         <p>
         Facturación<br />
+        </p>
+        <p>
             Monto: 
             <asp:Label ID="lMonto" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp; Descuento:<asp:Label ID="lDescuento" runat="server" Text="Label"></asp:Label>

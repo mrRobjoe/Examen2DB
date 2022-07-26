@@ -51,39 +51,39 @@ namespace Examen2JoharieEnriquez
         protected global::System.Web.UI.WebControls.TextBox tDireccion;
 
         /// <summary>
-        /// bElectricidad control.
+        /// bElectricidadd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bElectricidad;
+        protected global::System.Web.UI.WebControls.ImageButton bElectricidadd;
 
         /// <summary>
-        /// bAgua control.
+        /// bAguaa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bAgua;
+        protected global::System.Web.UI.WebControls.ImageButton bAguaa;
 
         /// <summary>
-        /// bCable control.
+        /// bCablee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bCable;
+        protected global::System.Web.UI.WebControls.ImageButton bCablee;
 
         /// <summary>
-        /// bTelefono control.
+        /// bTelefonno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bTelefono;
+        protected global::System.Web.UI.WebControls.ImageButton bTelefonno;
     }
 }

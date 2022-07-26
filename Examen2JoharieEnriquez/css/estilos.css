@@ -1,6 +1,27 @@
 ﻿body {
 }
 
-.centrar{
+.centrar {
+    text-align: center;
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.fondo1 {
+    background-image: url("images/electricidad.png");
+}
+
+.cent{
     text-align:center;
+    
+}
+
+.button {
+    border-style: groove;
+    border-color: #808080;
+}
+
+section {
+    border-style: groove;
+    border-color: #808080;
 }
