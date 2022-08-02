@@ -39,6 +39,7 @@ namespace Examen2JoharieEnriquez
         {
             int elect = 1;
             ClsCliente.SetServicio(elect);
+            ClsCliente.SetFactura();
             Response.Redirect("ManejoDatos.aspx");       
         }
 
@@ -46,6 +47,7 @@ namespace Examen2JoharieEnriquez
         {
             int elect = 2;
             ClsCliente.SetServicio(elect);
+            ClsCliente.SetFactura();
             Response.Redirect("ManejoDatos.aspx");
         }
 
@@ -53,6 +55,7 @@ namespace Examen2JoharieEnriquez
         {
             int elect = 3;
             ClsCliente.SetServicio(elect);
+            ClsCliente.SetFactura();
             Response.Redirect("ManejoDatos.aspx");          
         }
 
@@ -60,6 +63,7 @@ namespace Examen2JoharieEnriquez
         {
             int elect = 4;
             ClsCliente.SetServicio(elect);
+            ClsCliente.SetFactura();
             Response.Redirect("ManejoDatos.aspx");       
         }
     }

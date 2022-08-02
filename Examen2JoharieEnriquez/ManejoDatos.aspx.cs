@@ -16,25 +16,13 @@ namespace Examen2JoharieEnriquez
             lTelefono.Text=ClsCliente.GetTelefono();
             lDireccion.Text=ClsCliente.GetDireccion();
 
-            ClsCliente.Incremento();
-            lCodFactura.Text = Convert.ToString(ClsCliente.GetFactura());
+            lCodFactura.Text = ClsCliente.GetFactura().ToString();
             ClsCliente.codSer();
             lCodigoServ.Text = Convert.ToString(ClsCliente.GetTipoServ());
         }
 
         protected void bSalvar_Click(object sender, EventArgs e)
-        {
-             /*ClsCliente.SetNombre(lNombre.Text);
-             ClsCliente.SetCedula(lCedula.Text);
-             ClsCliente.SetDireccion(lDireccion.Text);
-             ClsCliente.SetTelefono(lTelefono.Text);
-             ClsCliente.SetMontoPagar(float.Parse(tMonto.Text));
-             ClsCliente.SetDescuento(float.Parse(tDescuento.Text));
-             ClsCliente.SetSubTotal(float.Parse(lSubTotal.Text));
-             ClsCliente.SetIVA(float.Parse(lIva.Text));
-             ClsCliente.SetTotal(float.Parse(lTotal.Text));*/
-           
-             
+        {             
             if (ClsCliente.Salvar())
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('Notification : Usuario ha sido guardado');", true);

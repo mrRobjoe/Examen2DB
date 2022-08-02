@@ -21,7 +21,7 @@ namespace Examen2JoharieEnriquez
         private static float iva { get; set; }
         private static float total { get; set; }
 
-        private static int codFactura = 0;
+        private static int codFactura { get; set; }
         private static int codServicio;
         private static string tipServ;
 
@@ -36,6 +36,7 @@ namespace Examen2JoharieEnriquez
             subTotal = subTo;
             iva= IVA;
             total= tot;
+            codFactura = 0;
         }
 
        /* internal static void SetMontoPagar(string text)
@@ -96,9 +97,9 @@ namespace Examen2JoharieEnriquez
         }
 
 
-        public static void SetFactura(int codFact)
+        public static void SetFactura()
         {
-            codFactura = codFact;
+            codFactura++;
         }
         public static void SetServicio(int codServ)
         {
@@ -148,11 +149,6 @@ namespace Examen2JoharieEnriquez
             SetSubTotal(montoPagar - descuento);
             SetIVA((float)(GetSubTotal() * 0.13));
             SetTotal(GetSubTotal() + GetIVA());
-        }
-
-        public static void Incremento()
-        {
-            codFactura += 1;
         }
 
         public static void codSer()

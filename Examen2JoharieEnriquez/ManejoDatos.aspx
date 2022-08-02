@@ -2,10 +2,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/estilos.css" rel="stylesheet" />
-    <section>
-        <p>
-        Facturación<br />
-        </p>
+    <fieldset>
+        <legend>Facturación</legend>
         <p>
         Cod Factura:
         <asp:Label ID="lCodFactura" runat="server" Text="Label"></asp:Label><br />
@@ -38,12 +36,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="bVolver" runat="server" Text="Volver" OnClick="bVolver_Click" />    
         </div>
-    </section>
+    </fieldset>
 
-    <section>
-        <p>
-        Cliente<br />
-        </p>
+    <fieldset>
+        <legend>Cliente</legend>
         <p>
             Nombre:
             <asp:Label ID="lNombre" runat="server"></asp:Label><br />
@@ -53,14 +49,13 @@
             <asp:Label ID="lTelefono" runat="server"></asp:Label><br />
             Direccion:
             <asp:Label ID="lDireccion" runat="server"></asp:Label>
-
         </p>
-    </section>
 
-    <section>
-        <p>
-        Facturación<br />
-        </p>
+    </fieldset>
+   
+        
+    <fieldset>
+        <legend>Facturación</legend>   
         <p>
             Monto: 
             <asp:Label ID="lMonto" runat="server" Text="Label"></asp:Label>
@@ -71,6 +66,7 @@
             <asp:Label ID="lIva" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp; Total:<asp:Label ID="lTotal" runat="server" Text="Label"></asp:Label>
 
-    </p>
-    </section>
+       </p>
+    </fieldset>
+    
 </asp:Content>
